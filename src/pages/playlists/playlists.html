@@ -1,0 +1,39 @@
+
+<ion-header>
+
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Playlists {{userID}}</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+<div class="user">
+  <img src="http://tiempo26.com/wp-content/uploads/2017/07/logo-tiempo-26_chco.png">
+  </div>
+  <h1>Nombre de usuario {{userID}}</h1>
+<ion-list>
+  <ion-item (click)="goToCanciones(1)">
+    <ion-thumbnail item-left>
+        <img src="https://lh3.googleusercontent.com/-f4hpU74Skvs/AAAAAAAAAAI/AAAAAAAAAAA/AFiYof0rlhjxqEzCIVAjs8WTtrQZY7tBFg/s32-c-mo/photo.jpg" alt="">
+    </ion-thumbnail>
+    <h2>Titulo de playlist 1</h2>
+    <p># canciones</p>
+   </ion-item>
+   <ion-item (click)="goToCanciones(2)">
+      <ion-thumbnail item-left>
+          <img src="https://lh3.googleusercontent.com/-f4hpU74Skvs/AAAAAAAAAAI/AAAAAAAAAAA/AFiYof0rlhjxqEzCIVAjs8WTtrQZY7tBFg/s32-c-mo/photo.jpg" alt="">
+      </ion-thumbnail>
+      <h2>Titulo de playlist 2</h2>
+      <p># canciones</p>
+     </ion-item>
+     <ion-item (click)="goToCanciones(3)">
+        <ion-thumbnail item-left>
+            <img src="https://lh3.googleusercontent.com/-f4hpU74Skvs/AAAAAAAAAAI/AAAAAAAAAAA/AFiYof0rlhjxqEzCIVAjs8WTtrQZY7tBFg/s32-c-mo/photo.jpg" alt="">
+        </ion-thumbnail>
+        <h2>Titulo de playlist 3</h2>
+        <p># canciones</p>
+       </ion-item>
+</ion-list>
+</ion-content>

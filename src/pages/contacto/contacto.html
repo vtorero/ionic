@@ -1,0 +1,35 @@
+<ion-header>
+    <ion-navbar color="primary">
+        <button ion-button menuToggle>
+          <ion-icon name="menu"></ion-icon>
+        </button>
+    <ion-title>Contacto</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <p>Envianos tu ID/Perfil de Deezer si deseas aparecer en la lista de la ap.</p>
+  <form>
+    <ion-list>
+      <ion-item>
+        <ion-label floating>ID Deezer</ion-label>
+        <ion-input type="text" name="deezerID" clearInput="true" required></ion-input>
+      </ion-item>
+      <ion-item>
+          <ion-label floating>Correo</ion-label>
+          <ion-input type="email" name="deezerEmail" clearInput="true"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label floating>Comentario</ion-label>
+            <ion-textarea name="comentario"></ion-textarea>
+      </ion-item>
+      <ion-item>
+          <ion-label>No soy un Robot</ion-label>
+          <ion-checkbox required></ion-checkbox>
+        </ion-item>
+
+   </ion-list>
+    <button type="submit" ion-button block icon-left>
+      <ion-icon name="send"></ion-icon>
+      Enviar</button>
+ </form>
+</ion-content>
