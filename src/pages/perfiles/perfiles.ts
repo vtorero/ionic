@@ -22,15 +22,25 @@ import {PlaylistsPage} from '../playlists/playlists';
 })
 export class PerfilesPage {
     films: Observable<any>;
+    public users :any;
   constructor(public navCtrl: NavController, 
     public navParams: NavParams,
-    public httpClient: HttpClient
+    public httpClient: HttpClient,
+  
    ) {
+    this.users=[];
     this.films = this.httpClient.get('https://www.reddit.com/r/gaming/new/.json');
     this.films
     .subscribe(data => {
-      console.log('my data: ', data.data.children);
-    })
+     // console.log('my data: ', data.data.children);
+      data.data.children.map(title=>{
+        this.users.push(title.data);
+        
+      }
+
+      );
+      console.log(this.users);
+    });
 
   }
   gotoPlaylist(userID){
