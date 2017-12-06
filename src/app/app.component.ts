@@ -20,7 +20,13 @@ export class MyApp {
     this.rootPage=InicioPage;
     this.pages=[
       {titulo:'Inicio',component:InicioPage,icon:'home'},
-      {titulo:'Perfiles',component:PerfilesPage,icon:'person'},
+      {titulo:'Denuncia',component:PerfilesPage,icon:'ios-list-box-outline'},
+      {titulo:'Política',component:PerfilesPage,icon:'md-briefcase'},
+      {titulo:'Opinión',component:PerfilesPage,icon:'ios-text-outline'},
+      {titulo:'Actualidad',component:PerfilesPage,icon:'ios-megaphone-outline'},
+      {titulo:'Economía',component:PerfilesPage,icon:'ios-pulse-outline'},
+      {titulo:'Ciencia',component:PerfilesPage,icon:'md-globe'},
+      {titulo:'Tech',component:PerfilesPage,icon:'md-laptop'},
       {titulo:'Contacto',component:ContactoPage,icon:'mail'},
       {titulo:'Acerca',component:AcercaPage,icon:'information-circle'},
     ]
