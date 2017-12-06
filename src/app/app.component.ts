@@ -7,6 +7,7 @@ import {InicioPage} from '../pages/inicio/inicio';
 import {PerfilesPage} from '../pages/perfiles/perfiles';
 import {ContactoPage} from '../pages/contacto/contacto';
 import {AcercaPage} from '../pages/acerca/acerca';
+import { DenunciasPage } from '../pages/denuncias/denuncias';
 
 @Component({
   templateUrl: 'app.html'
@@ -20,7 +21,7 @@ export class MyApp {
     this.rootPage=InicioPage;
     this.pages=[
       {titulo:'Inicio',component:InicioPage,icon:'home'},
-      {titulo:'Denuncia',component:PerfilesPage,icon:'ios-list-box-outline'},
+      {titulo:'Denuncia',component:DenunciasPage,icon:'ios-list-box-outline'},
       {titulo:'Política',component:PerfilesPage,icon:'md-briefcase'},
       {titulo:'Opinión',component:PerfilesPage,icon:'ios-text-outline'},
       {titulo:'Actualidad',component:PerfilesPage,icon:'ios-megaphone-outline'},

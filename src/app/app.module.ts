@@ -11,6 +11,7 @@ import{ContactoPage} from '../pages/contacto/contacto';
 import {AcercaPage} from '../pages/acerca/acerca';
 import {PlaylistsPage} from '../pages/playlists/playlists';
 import {CancionesPage} from '../pages/canciones/canciones';
+import {DenunciasPage} from '../pages/denuncias/denuncias';
 @NgModule({
   declarations: [
     MyApp,
@@ -19,7 +20,8 @@ import {CancionesPage} from '../pages/canciones/canciones';
     ContactoPage,
     AcercaPage,
     PlaylistsPage,
-    CancionesPage
+    CancionesPage,
+    DenunciasPage
   ],
   imports: [
     BrowserModule,
@@ -34,7 +36,8 @@ import {CancionesPage} from '../pages/canciones/canciones';
     ContactoPage,
     AcercaPage,
     PlaylistsPage,
-    CancionesPage
+    CancionesPage,
+    DenunciasPage
   ],
   providers: [
     StatusBar,
