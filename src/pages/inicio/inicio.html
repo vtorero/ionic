@@ -7,21 +7,20 @@
 <ion-header>
 
     <ion-navbar color="primary">
-        <button ion-button menuToggle>
-          <ion-icon name="menu" left></ion-icon>
+        <button ion-button menuToggle right>
+          <ion-icon name="menu"></ion-icon>
         </button>
 
-    <ion-title><ion-icon icon-right  name="home"></ion-icon> -  Tiempo26.com</ion-title>
+    <ion-title><a href="#inicio.html"><img src="https://tiempo26.com/wp-content/uploads/2016/12/LOGO-FINAL.png" alt="logo" height="40px" width="130px"/></a></ion-title>
   </ion-navbar>
 </ion-header>
 <ion-content class="card-background-page">
-          <h1>Titulares del día</h1> 
-                  <ion-slides spaceBetween="10">
+                       <ion-slides spaceBetween="10">
                 <ion-slide><img src="https://tiempo26.com/wp-content/uploads/2017/12/84.jpg" alt="farfan">
                   <h2>Alcalde de Cusco denunció al director de ‘La Paisana Jacinta’, Adolfo Aguilar, por incitar la discriminación</h2>
                   <p>El líder cusqueño arremetió contra el filme de Adolfo Aguilar.</p>
                   <ion-fab top right>
-                      <button ion-fab mini><ion-icon name="arrow-dropleft"></ion-icon></button>
+                      <button ion-fab mini><ion-icon name="md-share"></ion-icon></button>
                       <ion-fab-list side="left">
                         <button ion-fab><ion-icon name="logo-facebook"></ion-icon></button>
                         <button ion-fab><ion-icon name="logo-twitter"></ion-icon></button>
@@ -34,7 +33,7 @@
                   <h2>Proponen que pacientes de enfermedades terminales puedan retirar fondos de AFP ¿Estás de acuerdo?</h2>
                   <p>Proyecto de ley plantea posibilidad de retirar el 50% más la rentabilidad.</p>
                   <ion-fab top right>
-                      <button ion-fab mini><ion-icon name="arrow-dropleft"></ion-icon></button>
+                      <button ion-fab mini><ion-icon name="md-share"></ion-icon></button>
                       <ion-fab-list side="left">
                         <button ion-fab><ion-icon name="logo-facebook"></ion-icon></button>
                         <button ion-fab><ion-icon name="logo-twitter"></ion-icon></button>
@@ -47,7 +46,7 @@
                   <h2>El ‘fujimorismo’ busca usar a la comisión Lava Jato como “trinchera política”, asegura legislador oficialista </h2>
                   <p>Legislador oficialista afirma que comisión se ha politizado.</p>
                   <ion-fab top right>
-                      <button ion-fab mini><ion-icon name="arrow-dropleft"></ion-icon></button>
+                      <button ion-fab mini><ion-icon name="md-share"></ion-icon></button>
                       <ion-fab-list side="left">
                         <button ion-fab><ion-icon name="logo-facebook"></ion-icon></button>
                         <button ion-fab><ion-icon name="logo-twitter"></ion-icon></button>
@@ -104,7 +103,7 @@
                 <ion-thumbnail item-start>
                   <img src="https://e.ad.amtv.pe/ricardo-gareca-se-confeso-america-deportes-dia-antes-sorteo-mundial-390x245-421761.jpg">
                 </ion-thumbnail>
-                <h2>Ricardo Gareca , vamos a competir en el mundial</h2>
+                <h2>{{notas}}Ricardo Gareca , vamos a competir en el mundial</h2>
                 <p>30/11/2017</p>
                 <button ion-button clear item-end>Ver Nota</button>
               </ion-item>
@@ -133,7 +132,16 @@
                 <button ion-button clear item-end>Ver Nota</button>
               </ion-item>
             </ion-list>
-              
+            <ion-list>
+              <ion-item (click)="gotoPlaylist(1)" *ngFor="let nota of notas">
+                <ion-thumbnail item-start>
+                  <img src="{{nota.thumbnail}}" alt="">
+                </ion-thumbnail>
+                <h2>{{nota.title}}</h2>
+                <p>{{nota.modified}}</p>
+                <button ion-button clear item-end>Ver Nota</button>
+              </ion-item>
+            </ion-list>
          
       
      

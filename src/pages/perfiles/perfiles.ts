@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
-import { HttpClient } from '@angular/common/http'
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import {ApiServiceProvider} from '../../providers/api-service/api-service';
 import {PlaylistsPage} from '../playlists/playlists';
 
 
@@ -16,7 +16,8 @@ import {PlaylistsPage} from '../playlists/playlists';
 @IonicPage()
 @Component({
   selector: 'page-perfiles',
-  templateUrl: 'perfiles.html'
+  templateUrl: 'perfiles.html',
+  providers: [ApiServiceProvider]
  
 
 })
@@ -25,11 +26,12 @@ export class PerfilesPage {
     public users :any;
   constructor(public navCtrl: NavController, 
     public navParams: NavParams,
-    public httpClient: HttpClient,
+    public ds: ApiServiceProvider
+    //public httpClient: HttpClient,
   
    ) {
     this.users=[];
-    this.films = this.httpClient.get('https://www.reddit.com/r/gaming/new/.json');
+    this.films = this.ds.getProfilesId();
     this.films
     .subscribe(data => {
      // console.log('my data: ', data.data.children);
@@ -37,9 +39,9 @@ export class PerfilesPage {
         this.users.push(title.data);
         
       }
-
+      
       );
-      console.log(this.users);
+      //console.log(this.users);
     });
 
   }
@@ -47,7 +49,8 @@ export class PerfilesPage {
   this.navCtrl.push(PlaylistsPage,{userID:userID});
   }
   ionViewDidLoad() {
-   // this.ds.getProfilesId();
+  //console.log(this.users);
+   
    //console.log(this.http.get('https://www.reddit.com/r/gaming/new/.json'));
     //console.log('ionViewDidLoad PerfilesPage');
   }

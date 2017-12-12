@@ -1,8 +1,12 @@
 {
-  "name": "TecnoDeeze",
+  "name": "Tiempo26",
   "app_id": "",
   "type": "ionic-angular",
   "integrations": {
     "cordova": {}
-  }
+  },
+  "proxies":[{
+    "path":"/rutaApi",
+    "proxyUrl":"http://67.23.231.144/~cualesmi/"
+  }]
 }

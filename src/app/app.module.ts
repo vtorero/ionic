@@ -12,6 +12,7 @@ import {AcercaPage} from '../pages/acerca/acerca';
 import {PlaylistsPage} from '../pages/playlists/playlists';
 import {CancionesPage} from '../pages/canciones/canciones';
 import {DenunciasPage} from '../pages/denuncias/denuncias';
+import { ApiServiceProvider } from '../providers/api-service/api-service';
 @NgModule({
   declarations: [
     MyApp,
@@ -42,7 +43,8 @@ import {DenunciasPage} from '../pages/denuncias/denuncias';
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    ApiServiceProvider
     ]
 })
 export class AppModule {}
