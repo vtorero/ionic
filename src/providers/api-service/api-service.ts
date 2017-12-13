@@ -12,8 +12,8 @@ export class ApiServiceProvider {
   public rutaApi:string;
 
   constructor(public http: HttpClient) {
-    //this.rutaApi="http://67.23.231.144/~cualesmi/";
-    this.rutaApi="/rutaApi/";
+//this.rutaApi="http://67.23.231.144/~cualesmi/";
+  this.rutaApi="/rutaApi/";
     //console.log('Hello ApiServiceProvider Provider');
   }
 

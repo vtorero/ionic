@@ -142,8 +142,15 @@
                 <button ion-button clear item-end>Ver Nota</button>
               </ion-item>
             </ion-list>
-         
-      
+            <ion-content class="card-background-page">
+                
+            <ion-card *ngFor="let nota of notas">
+                <img src="{{nota.thumbnail}}"/>
+                <div class="card-title">{{nota.title}}</div>
+                <div class="card-subtitle">41 Listings</div>
+              </ion-card>
+            </ion-content>
+
      
 
 <!--<ion-grid>
