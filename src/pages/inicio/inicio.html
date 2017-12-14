@@ -15,42 +15,21 @@
   </ion-navbar>
 </ion-header>
 <ion-content class="card-background-page">
-                       <ion-slides spaceBetween="10">
-                <ion-slide><img src="https://tiempo26.com/wp-content/uploads/2017/12/84.jpg" alt="farfan">
-                  <h2>Alcalde de Cusco denunció al director de ‘La Paisana Jacinta’, Adolfo Aguilar, por incitar la discriminación</h2>
+                <ion-slides spaceBetween="10">
+                <ion-slide *ngFor="let slide of items"><img src="{{slide.image}}" alt="{{slide.title}}}" height="120px">
+                  <h2>{{slide.title}}</h2>
                   <p>El líder cusqueño arremetió contra el filme de Adolfo Aguilar.</p>
                   <ion-fab top right>
                       <button ion-fab mini><ion-icon name="md-share"></ion-icon></button>
                       <ion-fab-list side="left">
-                        <button ion-fab><ion-icon name="logo-facebook"></ion-icon></button>
+                          <button ion-fab>
+                            <ion-icon name="logo-whatsapp" color="secundary" (click)="whatsappshare(slide)">
+                              </ion-icon></button>
+                        <button ion-fab (click)="fbshare(slide)">
+                          <ion-icon name="logo-facebook">
+                          </ion-icon>
+                        </button>
                         <button ion-fab><ion-icon name="logo-twitter"></ion-icon></button>
-                        <button ion-fab><ion-icon name="logo-whatsapp" color="red"></ion-icon></button>
-                        <button ion-fab><ion-icon name="logo-googleplus"></ion-icon></button>
-                      </ion-fab-list>
-                    </ion-fab>
-                </ion-slide>
-                <ion-slide><img src="https://tiempo26.com/wp-content/uploads/2017/12/82.jpg" alt=""> 
-                  <h2>Proponen que pacientes de enfermedades terminales puedan retirar fondos de AFP ¿Estás de acuerdo?</h2>
-                  <p>Proyecto de ley plantea posibilidad de retirar el 50% más la rentabilidad.</p>
-                  <ion-fab top right>
-                      <button ion-fab mini><ion-icon name="md-share"></ion-icon></button>
-                      <ion-fab-list side="left">
-                        <button ion-fab><ion-icon name="logo-facebook"></ion-icon></button>
-                        <button ion-fab><ion-icon name="logo-twitter"></ion-icon></button>
-                        <button ion-fab><ion-icon name="logo-whatsapp"></ion-icon></button>
-                        <button ion-fab><ion-icon name="logo-googleplus"></ion-icon></button>
-                      </ion-fab-list>
-                    </ion-fab>
-                </ion-slide>
-                <ion-slide><img src="https://tiempo26.com/wp-content/uploads/2017/12/80.jpg" alt="">
-                  <h2>El ‘fujimorismo’ busca usar a la comisión Lava Jato como “trinchera política”, asegura legislador oficialista </h2>
-                  <p>Legislador oficialista afirma que comisión se ha politizado.</p>
-                  <ion-fab top right>
-                      <button ion-fab mini><ion-icon name="md-share"></ion-icon></button>
-                      <ion-fab-list side="left">
-                        <button ion-fab><ion-icon name="logo-facebook"></ion-icon></button>
-                        <button ion-fab><ion-icon name="logo-twitter"></ion-icon></button>
-                        <button ion-fab><ion-icon name="logo-whatsapp"></ion-icon></button>
                         <button ion-fab><ion-icon name="logo-googleplus"></ion-icon></button>
                       </ion-fab-list>
                     </ion-fab>
@@ -146,8 +125,9 @@
                 
             <ion-card *ngFor="let nota of notas">
                 <img src="{{nota.thumbnail}}"/>
+                
                 <div class="card-title">{{nota.title}}</div>
-                <div class="card-subtitle">41 Listings</div>
+                <div class="card-subtitle">{{nota.author.name}}</div>
               </ion-card>
             </ion-content>
 

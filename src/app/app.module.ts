@@ -13,6 +13,7 @@ import {PlaylistsPage} from '../pages/playlists/playlists';
 import {CancionesPage} from '../pages/canciones/canciones';
 import {DenunciasPage} from '../pages/denuncias/denuncias';
 import { ApiServiceProvider } from '../providers/api-service/api-service';
+import {SocialSharing} from '@ionic-native/social-sharing'
 @NgModule({
   declarations: [
     MyApp,
@@ -44,7 +45,8 @@ import { ApiServiceProvider } from '../providers/api-service/api-service';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    ApiServiceProvider
+    ApiServiceProvider,
+    SocialSharing
     ]
 })
 export class AppModule {}

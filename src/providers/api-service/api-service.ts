@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import 'rxjs/add/operator/map';
 
 /*
   Generated class for the ApiServiceProvider provider.
@@ -12,8 +13,8 @@ export class ApiServiceProvider {
   public rutaApi:string;
 
   constructor(public http: HttpClient) {
-//this.rutaApi="http://67.23.231.144/~cualesmi/";
-  this.rutaApi="/rutaApi/";
+this.rutaApi="http://107.190.129.66/~cualesmi/";
+//  this.rutaApi="/rutaApi/";
     //console.log('Hello ApiServiceProvider Provider');
   }
 
