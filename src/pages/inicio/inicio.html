@@ -14,25 +14,29 @@
     <ion-title><a href="#inicio.html"><img src="https://tiempo26.com/wp-content/uploads/2016/12/LOGO-FINAL.png" alt="logo" height="40px" width="130px"/></a></ion-title>
   </ion-navbar>
 </ion-header>
+
 <ion-content class="card-background-page">
+    <hr> 
                 <ion-slides spaceBetween="10">
                 <ion-slide *ngFor="let slide of items"><img src="{{slide.image}}" alt="{{slide.title}}}" height="120px">
                   <h2>{{slide.title}}</h2>
                   <p>El líder cusqueño arremetió contra el filme de Adolfo Aguilar.</p>
-                  <ion-fab top right>
-                      <button ion-fab mini><ion-icon name="md-share"></ion-icon></button>
-                      <ion-fab-list side="left">
-                          <button ion-fab>
-                            <ion-icon name="logo-whatsapp" color="secundary" (click)="whatsappshare(slide)">
-                              </ion-icon></button>
-                        <button ion-fab (click)="fbshare(slide)">
-                          <ion-icon name="logo-facebook">
-                          </ion-icon>
-                        </button>
-                        <button ion-fab><ion-icon name="logo-twitter"></ion-icon></button>
-                        <button ion-fab><ion-icon name="logo-googleplus"></ion-icon></button>
-                      </ion-fab-list>
-                    </ion-fab>
+              
+                      
+                     <ion-fab top left>
+                          <button ion-fab mini><ion-icon name="md-share"></ion-icon></button>
+                          <ion-fab-list side="right">
+                              <button ion-fab>
+                                <ion-icon name="logo-whatsapp" color="secundary" (click)="whatsappshare(slide)">
+                                  </ion-icon></button>
+                            <button ion-fab (click)="fbshare(slide)">
+                              <ion-icon name="logo-facebook">
+                              </ion-icon>
+                            </button>
+                            <button ion-fab><ion-icon name="logo-twitter"></ion-icon></button>
+                            <button ion-fab><ion-icon name="logo-googleplus"></ion-icon></button>
+                          </ion-fab-list>
+                        </ion-fab>
                 </ion-slide>
               </ion-slides>
        <h2>Actualidad</h2>
