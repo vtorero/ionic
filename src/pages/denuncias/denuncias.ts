@@ -1,5 +1,10 @@
 import { Component } from '@angular/core';
+import { Observable } from 'rxjs/Observable';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import {ApiServiceProvider} from '../../providers/api-service/api-service';
+import {NotaPage} from '../nota/nota';
+
+
 
 /**
  * Generated class for the DenunciasPage page.
@@ -12,20 +17,28 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 @Component({
   selector: 'page-denuncias',
   templateUrl: 'denuncias.html',
+  providers: [ApiServiceProvider]
 })
 export class DenunciasPage {
   public notas:any;
-
-
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-    this.notas=[{titulo:'prebabe1',detalle:'detalle del titulo'},
+  public nota: Observable<any>;
+  constructor(public navCtrl: NavController, public navParams: NavParams,  public ds: ApiServiceProvider) {
+    this.notas=[];
+    this.nota = this.ds.getCategoria('tecnologia');
+    this.nota.subscribe(data => {        
+      data.posts.map(post=>{
+            this.notas.push(post);
+     });
+     console.log(this.notas);
+    /*this.notas=[{titulo:'prebabe1',detalle:'detalle del titulo'},
     {titulo:'prebabe2',detalle:'detalle del titulo'},
     {titulo:'prebabe3',detalle:'detalle del titulo'}
-  ,{titulo:'prebabe4',detalle:'detalle del titulo'}];
-  }
+  ,{titulo:'prebabe4',detalle:'detalle del titulo'}];*/
+  });
+}
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad DenunciasPage');
+    //console.log('ionViewDidLoad DenunciasPage');
   }
 
 }

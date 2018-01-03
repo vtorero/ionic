@@ -59,7 +59,7 @@ export class InicioPage {
 
   }
 
-  whatsappshare(wsshare){
+whatsappshare(wsshare){
 this.sharing.shareViaWhatsApp(wsshare.title,wsshare.image,wsshare.url)
 .then(()=>{
   console.log("mensaje enviado");
