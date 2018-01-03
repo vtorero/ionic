@@ -23,6 +23,10 @@ export class ApiServiceProvider {
     
   }
 
+  getCategoria(slug){
+    return this.http.get(this.rutaApi+'api/get_category_posts/?slug='+ slug);
+  }
+  
   getRecientes(){
   return this.http.get(this.rutaApi + '?json=get_recent_post');
   }
