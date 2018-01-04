@@ -7,12 +7,14 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>nota</ion-title>
+    <ion-title>nota {{noticia.title}}</ion-title>
   </ion-navbar>
-
 </ion-header>
-
-
 <ion-content padding>
-
+  <ion-item (click)="gotoPlaylist(1)" *ngFor="let n of noticia">
+        
+        <h1>{{n.title}}</h1>
+        <div [innerHTML]="n.content">
+        </div>
+  </ion-item>
 </ion-content>

@@ -27,6 +27,10 @@ export class ApiServiceProvider {
     return this.http.get(this.rutaApi+'api/get_category_posts/?slug='+slug);
   }
 
+  getNota(id){
+    return this.http.get(this.rutaApi+'?json=get_post&post_id='+ id);
+  }
+
   getRecientes(){
   return this.http.get(this.rutaApi + '?json=get_recent_post');
   }

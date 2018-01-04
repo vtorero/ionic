@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
+import { Observable } from 'rxjs/Observable';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import {ApiServiceProvider} from '../../providers/api-service/api-service';
 
 /**
  * Generated class for the NotaPage page.
@@ -15,10 +17,24 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class NotaPage {
   public notaID:number;
-
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  public noticia:any;
+  public nota: Observable<any>;
+  constructor(public navCtrl: NavController, public navParams: NavParams,public ds: ApiServiceProvider) {
     this.notaID=this.navParams.get('notaID');
-    //console.log(this.notaID);
+    this.noticia=[];
+    this.nota = this.ds.getNota(this.notaID);
+    this.nota
+    .subscribe(data => {
+      //console.log('my data: ', data);
+         this.noticia.push(data.post);
+        }
+      );
+      //console.log(this.users);
+    
+
+ 
+
+    console.log(this.noticia);
   }
 
   ionViewDidLoad() {
