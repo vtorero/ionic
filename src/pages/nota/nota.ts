@@ -18,7 +18,7 @@ export class NotaPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.notaID=this.navParams.get('notaID');
-    console.log(this.notaID);
+    //console.log(this.notaID);
   }
 
   ionViewDidLoad() {
