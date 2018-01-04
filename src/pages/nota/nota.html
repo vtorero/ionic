@@ -7,13 +7,13 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>nota {{noticia.title}}</ion-title>
+    <ion-title>Tiempo26.com</ion-title>
   </ion-navbar>
 </ion-header>
 <ion-content padding>
   <ion-item (click)="gotoPlaylist(1)" *ngFor="let n of noticia">
-        
-        <h1>{{n.title}}</h1>
+        <h1 class="titulo">{{n.title}}</h1>
+         <img src="{{n.thumbnail}}" alt="">
         <div [innerHTML]="n.content">
         </div>
   </ion-item>
