@@ -8,6 +8,7 @@ import {PerfilesPage} from '../pages/perfiles/perfiles';
 import {ContactoPage} from '../pages/contacto/contacto';
 import {AcercaPage} from '../pages/acerca/acerca';
 import { DenunciasPage } from '../pages/denuncias/denuncias';
+import {NotaPage} from '../pages/nota/nota'
 
 @Component({
   templateUrl: 'app.html'

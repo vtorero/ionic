@@ -14,6 +14,7 @@ import {CancionesPage} from '../pages/canciones/canciones';
 import {DenunciasPage} from '../pages/denuncias/denuncias';
 import { ApiServiceProvider } from '../providers/api-service/api-service';
 import {SocialSharing} from '@ionic-native/social-sharing'
+import { NotaPage } from '../pages/nota/nota';
 @NgModule({
   declarations: [
     MyApp,
@@ -23,7 +24,8 @@ import {SocialSharing} from '@ionic-native/social-sharing'
     AcercaPage,
     PlaylistsPage,
     CancionesPage,
-    DenunciasPage
+    DenunciasPage,
+    NotaPage
   ],
   imports: [
     BrowserModule,
@@ -39,7 +41,8 @@ import {SocialSharing} from '@ionic-native/social-sharing'
     AcercaPage,
     PlaylistsPage,
     CancionesPage,
-    DenunciasPage
+    DenunciasPage,
+    NotaPage
   ],
   providers: [
     StatusBar,
