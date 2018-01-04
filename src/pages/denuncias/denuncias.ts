@@ -36,6 +36,11 @@ export class DenunciasPage {
   ,{titulo:'prebabe4',detalle:'detalle del titulo'}];*/
   });
 }
+ gotoNota(id){
+  this.navCtrl.push(NotaPage,{notaID:id});
+   console.log(id);
+
+ }
 
   ionViewDidLoad() {
     //console.log('ionViewDidLoad DenunciasPage');

@@ -22,8 +22,8 @@
         <ion-slide><img src="https://e.ad.amtv.pe/ricardo-gareca-se-confeso-america-deportes-dia-antes-sorteo-mundial-390x245-421761.jpg" alt=""></ion-slide>
       </ion-slides>
     <ion-list>
-        <ion-item (click)="gotoPlaylist(1)" *ngFor="let nota of notas">
-          <ion-thumbnail item-start>
+        <ion-item (click)="gotoNota(nota.id)" *ngFor="let nota of notas">
+          <ion-thumbnail item-start class="{{nota.id}}">
             <img src="{{nota.thumbnail}}">
           </ion-thumbnail>
           <h2>{{nota.title}}</h2>
