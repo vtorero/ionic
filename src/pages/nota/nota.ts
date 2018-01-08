@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import {ApiServiceProvider} from '../../providers/api-service/api-service';
+import {SocialSharing} from '@ionic-native/social-sharing';
 
 /**
  * Generated class for the NotaPage page.
@@ -19,7 +20,30 @@ export class NotaPage {
   public notaID:number;
   public noticia:any;
   public nota: Observable<any>;
-  constructor(public navCtrl: NavController, public navParams: NavParams,public ds: ApiServiceProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,public ds: ApiServiceProvider, private sharing:SocialSharing) {
+   
+  }
+
+  whatsappshare(wsshare){
+    this.sharing.shareViaWhatsApp(wsshare.title,wsshare.image,wsshare.url)
+    .then(()=>{
+      console.log("mensaje enviado");
+    }).catch((error)=>{
+    console.log(error);
+    });
+    }
+
+    facebookshare(wsshare){
+      this.sharing.shareViaFacebook(wsshare.title,wsshare.image,wsshare.url)
+      .then(()=>{
+        console.log("mensaje enviado");
+      }).catch((error)=>{
+      console.log(error);
+      });
+      }
+
+
+  ngOnInit(){
     this.notaID=this.navParams.get('notaID');
     this.noticia=[];
     this.nota = this.ds.getNota(this.notaID);
@@ -35,8 +59,8 @@ export class NotaPage {
  
 
     console.log(this.noticia);
-  }
 
+  }
   ionViewDidLoad() {
    // console.log('ionViewDidLoad NotaPage');
   }

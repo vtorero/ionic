@@ -10,11 +10,27 @@
     <ion-title>Tiempo26.com</ion-title>
   </ion-navbar>
 </ion-header>
-<ion-content padding>
-  <ion-item (click)="gotoPlaylist(1)" *ngFor="let n of noticia">
+<ion-content padding *ngFor="let n of noticia">
+  <ion-item>
         <h1 class="titulo">{{n.title}}</h1>
          <img src="{{n.thumbnail_images.full.url}}" alt="">
+         <p>{{n.date}}</p>
+  
+           
         <div [innerHTML]="n.content">
         </div>
+    
   </ion-item>
 </ion-content>
+<ion-footer>
+  <ion-toolbar right>
+    <ion-title><button>Compartir</button>       <button>
+      <ion-icon name="logo-whatsapp" class="compartir" color="secundary" (click)="whatsappshare(n)">
+        </ion-icon></button>
+  <button  (click)="fbshare(slide)">
+    <ion-icon name="logo-facebook" class="compartir" (click)="facebookshare(n)>
+    </ion-icon>
+  </button>
+  <button ><ion-icon name="logo-twitter" class="compartir"></ion-icon></button></ion-title>
+  </ion-toolbar>
+</ion-footer>

@@ -11,4 +11,13 @@ page-nota {
         text-overflow: ellipsis;
         white-space: normal !important;
       }
+
+      ion-label{white-space: normal !important;
+    text-align: justify;
+    }
+
+    .compartir{
+        font-size: 30px !important;
+    }
+
 }
