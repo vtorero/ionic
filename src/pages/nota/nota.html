@@ -5,22 +5,16 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-
   <ion-navbar color="primary">
     <ion-title>Tiempo26.com</ion-title>
   </ion-navbar>
 </ion-header>
 <ion-content padding *ngFor="let n of noticia">
-  <ion-item>
-        
+  <ion-item><br><br>
          <img src="{{n.thumbnail_images.full.url}}" alt="">
          <h1 class="titulo">{{n.title}}</h1>
-         
-                <div [innerHTML]="n.content">
-        </div>
-    
+      <div [innerHTML]="n.content"></div>
   </ion-item>
-
 </ion-content>
 <ion-footer>
   <ion-fab bottom right *ngFor="let n of noticia">

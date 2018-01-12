@@ -2,13 +2,11 @@ import { Component,ViewChild } from '@angular/core';
 import { Platform,Nav } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-
 import {InicioPage} from '../pages/inicio/inicio';
 import {PerfilesPage} from '../pages/perfiles/perfiles';
 import {ContactoPage} from '../pages/contacto/contacto';
 import {AcercaPage} from '../pages/acerca/acerca';
 import { DenunciasPage } from '../pages/denuncias/denuncias';
-import {NotaPage} from '../pages/nota/nota'
 
 @Component({
   templateUrl: 'app.html'
@@ -37,8 +35,14 @@ export class MyApp {
       // Here you can do any higher level native things you might need.
       statusBar.styleDefault();
       splashScreen.hide();
+      //this.RegisterNotification();
+      //this.Notification();
     });
   }
+
+
+
+
 
   goToPage(page) {
     this.nav.setRoot(page);
