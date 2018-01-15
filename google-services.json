@@ -1,27 +1,27 @@
 {
   "project_info": {
-    "project_number": "938177716597",
-    "firebase_url": "https://notificaciones-22165.firebaseio.com",
-    "project_id": "notificaciones-22165",
-    "storage_bucket": "notificaciones-22165.appspot.com"
+    "project_number": "136351327374",
+    "firebase_url": "https://simple-push-cordova-a562e.firebaseio.com",
+    "project_id": "simple-push-cordova-a562e",
+    "storage_bucket": "simple-push-cordova-a562e.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:938177716597:android:dbb3734053cd6d2c",
+        "mobilesdk_app_id": "1:136351327374:android:77b3fa701e4f833c",
         "android_client_info": {
-          "package_name": "com.notification.push"
+          "package_name": "com.simplepush.app"
         }
       },
       "oauth_client": [
         {
-          "client_id": "938177716597-l7kphpqc473tkq4ltg323t2pq2e7r7j8.apps.googleusercontent.com",
+          "client_id": "136351327374-ls5d1ghel7ooc0apps2ondm5u0agn9g3.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDk9WVq2qe8JaBSnekdCNfylHKu9MvLAeI"
+          "current_key": "AIzaSyBV7I2Ts51Mpgsx2VUVWyhW5zekSHWlzoc"
         }
       ],
       "services": {

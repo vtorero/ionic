@@ -1,8 +1,9 @@
-import { Component } from '@angular/core';
+import { Component} from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import {ApiServiceProvider} from '../../providers/api-service/api-service';
 import {SocialSharing} from '@ionic-native/social-sharing';
+import {NotaPage} from '../nota/nota';
 
 
 
@@ -20,15 +21,16 @@ import {SocialSharing} from '@ionic-native/social-sharing';
   providers:[ApiServiceProvider]
 })
 export class InicioPage {
+  public notas:any;
   nota: Observable<any>;
-  public notas :any;
   items: Array<{id:number,title: string, note: string,image:string,url:string}>;
   constructor(
     public navCtrl: NavController, 
     public navParams: NavParams,
     public ds: ApiServiceProvider,
-    private sharing:SocialSharing) {
-      this.notas=[];
+    private sharing:SocialSharing
+    ) 
+    { this.notas=[];
       this.items = [];
       this.nota = this.ds.getRecientes();
       this.nota.subscribe(data => {        
@@ -56,8 +58,16 @@ export class InicioPage {
          //console.log(this.notas);
          console.log(this.items);
        });
+      // this.onNotification();
 
   }
+
+  gotoNota(id){
+    this.navCtrl.push(NotaPage,{notaID:id});
+     console.log(id);
+  
+   }
+
 
 whatsappshare(wsshare){
 this.sharing.shareViaWhatsApp(wsshare.title,wsshare.image,wsshare.url)
