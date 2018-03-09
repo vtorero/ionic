@@ -34,7 +34,7 @@ export class NotaPage {
     }
 
     facebookshare(wsshare){
-      this.sharing.shareViaFacebook(wsshare.title,wsshare.image,wsshare.url)
+      this.sharing.shareViaFacebook(null,wsshare.image,wsshare.url)
       .then(()=>{
         console.log("mensaje enviado");
       }).catch((error)=>{

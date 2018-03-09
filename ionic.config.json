@@ -7,6 +7,6 @@
   },
   "proxies":[{
     "path":"/rutaApi",
-    "proxyUrl":"http://107.190.129.66/~cualesmi/"
+    "proxyUrl":"https://tiempo26.com/"
   }]
 }

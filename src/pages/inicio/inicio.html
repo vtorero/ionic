@@ -17,24 +17,25 @@
 
 <ion-content class="card-background-page">
     <hr> 
-                <ion-slides spaceBetween="10">
-                <ion-slide (click)="gotoNota(slide.id)"  *ngFor="let slide of items"><img src="{{slide.image}}" alt="{{slide.title}}}" height="120px">
-                  <h2 class="titulo">{{slide.title}}</h2>
+                <ion-slides spaceBetween="10" pager>
+                <ion-slide  *ngFor="let slide of items">
                     <ion-fab top left>
-                          <button ion-fab mini><ion-icon name="md-share"></ion-icon></button>
-                          <ion-fab-list side="right">
-                              <button ion-fab>
-                                <ion-icon name="logo-whatsapp" color="secundary" (click)="whatsappshare(slide)">
-                                  </ion-icon></button>
-                            <button ion-fab (click)="fbshare(slide)">
-                              <ion-icon name="logo-facebook">
-                              </ion-icon>
-                            </button>
-                            <button ion-fab><ion-icon name="logo-twitter"></ion-icon></button>
-                            <button ion-fab><ion-icon name="logo-googleplus"></ion-icon></button>
-                          </ion-fab-list>
-                        </ion-fab>
+                        <button ion-fab mini><ion-icon name="md-share"></ion-icon></button>
+                        <ion-fab-list side="right">
+                            <button ion-fab>
+                              <ion-icon name="logo-whatsapp" color="secundary" (click)="whatsappshare(slide)">
+                                </ion-icon></button>
+                          <button ion-fab (click)="facebookshare(slide)">
+                            <ion-icon name="logo-facebook"></ion-icon></button>
+                          <button ion-fab><ion-icon name="logo-twitter"></ion-icon></button>
+                          <button ion-fab><ion-icon name="logo-googleplus"></ion-icon></button>
+                        </ion-fab-list>
+                      </ion-fab>
+                  
+                  <img  (click)="gotoNota(slide.id)" src="{{slide.image}}" alt="{{slide.title}}}" height="120px">
+                  <h2 class="titulo" (click)="gotoNota(slide.id)">{{slide.title}}</h2>
                 </ion-slide>
+            
               </ion-slides>
        <h2>Actualidad</h2>
             <ion-grid>

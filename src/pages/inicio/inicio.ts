@@ -38,11 +38,11 @@ export class InicioPage {
                this.notas.push(post);
         });
         //data.posts.length
-        for(let i = 0; i <4; i++) 
+        for(let i = 0; i <7; i++) 
         {
           this.items.push({
             id: data.posts[i].id,
-            title: data.posts[i].title,
+            title: data.posts[i].title.substr(0,120)+'...'.toUpperCase(),
             note: data.posts[i].title,
             image:data.posts[i].thumbnail_images["full"].url,
             url: data.posts[i].url
@@ -72,11 +72,21 @@ export class InicioPage {
 whatsappshare(wsshare){
 this.sharing.shareViaWhatsApp(wsshare.title,wsshare.image,wsshare.url)
 .then(()=>{
-  console.log("mensaje enviado");
+  console.log(wsshare.title,wsshare.image,wsshare.url);
 }).catch((error)=>{
 console.log(error);
 });
 }
+
+facebookshare(wsshare){
+  this.sharing.shareViaFacebook(wsshare.title,wsshare.image,wsshare.url)
+  .then(()=>{
+    console.log(wsshare.title,wsshare.image,wsshare.url);
+  }).catch((error)=>{
+  console.log(error);
+  });
+  }
+
 
   ionViewDidLoad() {
     //console.log('inicio page esta cargada');
