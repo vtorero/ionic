@@ -42,7 +42,7 @@ export class InicioPage {
         {
           this.items.push({
             id: data.posts[i].id,
-            title: data.posts[i].title.substr(0,120)+'...'.toUpperCase(),
+            title: data.posts[i].title_plain.substr(0,80)+'...'.toUpperCase(),
             note: data.posts[i].title,
             image:data.posts[i].thumbnail_images["full"].url,
             url: data.posts[i].url
@@ -50,7 +50,7 @@ export class InicioPage {
          
           //console.log(data.posts[i].thumbnail_images["full"].url);
         }
-        //console.log(data.posts[7]);
+        console.log(data.posts);
          
         //console.log(this.notas[0].thumbnail_images["full"].url);
         //console.log(this.notas[0].attachments[0]["images"]["full"].url);

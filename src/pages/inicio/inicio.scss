@@ -30,4 +30,17 @@ page-inicio {
          font-size: 25px;
          font-weight: bolder;
        }
+
+       .LastNews__title{
+        line-height: 2.3rem;
+        text-align: center;
+        font-size: 2.3rem;
+        font-weight: 700;
+        color: #fff;
+        background-color: #f70029;
+        padding: 8px 10px;
+       }
+       .fa-angle-double-down:before {
+        content: "\F103";
+    }
 }
