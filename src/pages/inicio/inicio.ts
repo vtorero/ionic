@@ -38,7 +38,7 @@ export class InicioPage {
                this.notas.push(post);
         });
         //data.posts.length
-        for(let i = 0; i <7; i++) 
+        for(let i = 1; i <7; i++) 
         {
           this.items.push({
             id: data.posts[i].id,

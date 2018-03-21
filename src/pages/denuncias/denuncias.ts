@@ -29,8 +29,8 @@ export class DenunciasPage {
       data.posts.map(post=>{
             this.notas.push(post);
      });
-     console.log(this.notas);
-    /*this.notas=[{titulo:'prebabe1',detalle:'detalle del titulo'},
+    /* console.log(this.notas);
+    this.notas=[{titulo:'prebabe1',detalle:'detalle del titulo'},
     {titulo:'prebabe2',detalle:'detalle del titulo'},
     {titulo:'prebabe3',detalle:'detalle del titulo'}
   ,{titulo:'prebabe4',detalle:'detalle del titulo'}];*/
