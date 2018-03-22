@@ -39,21 +39,48 @@
               </ion-slides>
               <h2 class="LastNews__title">DENUNCIAS</h2>
             <ion-grid>
-                  <ion-row>
-                    <ion-col col-6><img src="https://e.ad.amtv.pe/ricardo-gareca-se-confeso-america-deportes-dia-antes-sorteo-mundial-390x245-421761.jpg" alt="">
-                      This column will take 6 columns
-                    </ion-col>
-                     <ion-col col-6><img src="https://e.ad.amtv.pe/ricardo-gareca-se-confeso-america-deportes-dia-antes-sorteo-mundial-390x245-421761.jpg" alt="">
-                      This column will take 6 columns</ion-col>
-                  </ion-row>
-                  <ion-row>
-                      <ion-col col-6><img src="https://e.ad.amtv.pe/ricardo-gareca-se-confeso-america-deportes-dia-antes-sorteo-mundial-390x245-421761.jpg" alt="">
-                        This column will take 6 columns
-                      </ion-col>
-                       <ion-col col-6><img src="https://e.ad.amtv.pe/ricardo-gareca-se-confeso-america-deportes-dia-antes-sorteo-mundial-390x245-421761.jpg" alt="">
-                        This column will take 6 columns</ion-col>
-                    </ion-row>
-                </ion-grid>
+                          
+              <ion-card *ngFor="let den of denuncias">
+              
+                <!--<ion-item>
+                  <ion-avatar item-start>
+                    <img src="{{den.image}}">
+                  </ion-avatar>
+                  <h2>Marty McFly</h2>
+                  <p>November 5, 1955</p>
+                </ion-item>
+              -->
+                <img (click)="gotoNota(den.id)" src="{{den.image}}">
+              
+                <ion-card-content>
+                  <p>{{den.title}}</p>
+                </ion-card-content>
+              
+                <ion-row>
+                  <ion-col>
+                    <button ion-button icon-left clear small (click)="facebookshare(den)">
+                      <ion-icon name="logo-facebook"></ion-icon>
+                      <div>Compartir</div>
+                    </button>
+                  </ion-col>
+                  <ion-col>
+                    <button ion-button icon-left clear small (click)="whatsappshare(den)">
+                      <ion-icon name="logo-whatsapp"></ion-icon>
+                      <div>Copartir</div>
+                    </button>
+                  </ion-col>
+                  <ion-col center text-center>
+                    <ion-note>
+                      11h ago
+                    </ion-note>
+                  </ion-col>
+                </ion-row>
+              
+              </ion-card>
+              
+              
+                
+              </ion-grid>
             <h2>Deportes</h2>      
             <ion-list>
               <ion-item>

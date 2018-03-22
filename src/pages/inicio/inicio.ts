@@ -22,8 +22,12 @@ import {NotaPage} from '../nota/nota';
 })
 export class InicioPage {
   public notas:any;
+  public notas2:any;
+  public denuncias:any;
   nota: Observable<any>;
+  den:Observable<any>;
   items: Array<{id:number,title: string, note: string,image:string,url:string}>;
+  items2: Array<{id:number,title: string, note: string,image:string,url:string}>;
   constructor(
     public navCtrl: NavController, 
     public navParams: NavParams,
@@ -31,7 +35,33 @@ export class InicioPage {
     private sharing:SocialSharing
     ) 
     { this.notas=[];
+      this.notas2=[];
+      this.denuncias=[];
       this.items = [];
+      this.den = this.ds.getCategoria('denuncia');
+
+      this.den.subscribe(data=> {        
+        data.posts.map(post=>{
+              this.notas2.push(post);
+            });
+        //console.log(data.posts[i].thumbnail_images["full"].url);
+            
+        for(let u = 1; u <7; u++) 
+        {
+          this.denuncias.push({
+            id: data.posts[u].id,
+            title: data.posts[u].title_plain.substr(0,80)+'...'.toUpperCase(),
+            note: data.posts[u].title,
+            image:data.posts[u].thumbnail_images["full"].url,
+            url: data.posts[u].url
+
+           
+          });
+        }
+
+      });
+
+      
       this.nota = this.ds.getRecientes();
       this.nota.subscribe(data => {        
          data.posts.map(post=>{
@@ -50,13 +80,13 @@ export class InicioPage {
          
           //console.log(data.posts[i].thumbnail_images["full"].url);
         }
-        console.log(data.posts);
+        //console.log(data.posts);
          
         //console.log(this.notas[0].thumbnail_images["full"].url);
         //console.log(this.notas[0].attachments[0]["images"]["full"].url);
         //console.log(this.notas.length);
          //console.log(this.notas);
-         console.log(this.items);
+         //console.log(this.items);
        });
       // this.onNotification();
 
